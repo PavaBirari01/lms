@@ -1,0 +1,49 @@
+{% extends 'layouts.html' %}
+{% block contentA %}
+<div class="container w-50">
+    <form method="POST" action="">
+        {{form.hidden_tag()}}
+        <fieldset>
+        <legend class="border-bottom mb-4">Add new Subjects</legend>
+        <div class="form-group">
+                {{form.subname.label(class="form-control-label")}}
+                {%if form.subname.error%}
+                {{form.subname(class="form-control form-control-lg is-invalid")}}
+                {%for error in form.subname.errors%}
+                <span>{{error}}</span>
+                {%endfor%}
+                {%else%}
+                {{form.subname(class="form-control form-control-lg")}}
+                {%endif%}
+        </div>
+
+        <div class="form-group">
+            {{form.subid.label(class="form-control-label")}}
+            {%if form.subid.error%}
+            {{form.subid(class="form-control form-control-lg is-invalid")}}
+            {%for error in form.subid.errors%}
+            <span>{{error}}</span>
+            {%endfor%}
+            {%else%}
+            {{form.subid(class="form-control form-control-lg")}}
+            {%endif%}
+    </div>
+    <!-- <div class="row">
+        <div class="col-3">
+          <input type="text" class="form-control" placeholder="Subject Name" name="SubName" />
+        </div>
+        <div class="col-3">
+          <input type="text" class="form-control" placeholder=""Subject Code" name="SubCode" />
+        </div>
+    </div>
+        -->
+        </fieldset>
+        <!-- <button type="submit" class="btn btn-outline-success">ADD BOOK</button> -->
+        <div class="form-group mt-5">
+            {{form.submit(class='btn btn-outline-success')}}
+        </div>
+    </form>
+   
+   
+</div>
+{% endblock contentA %}

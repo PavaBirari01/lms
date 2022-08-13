@@ -1,0 +1,46 @@
+{% extends 'layouts.html' %}
+{% block contentA %}
+<div class="container rounded mt-3 bg-white p-md-5 br">
+  <form method="post" action="">
+    <div class="row">
+      <div class="col-3">
+        <input type="text" class="form-control" placeholder="Book Name" name="Kitab" required />
+      </div>
+      <div class="col-3">
+        <button type="submit" class="btn btn-primary">Search Book</button>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock contentA %}
+{% block contentC%}
+<div class="table-responsive container">
+  <table class="table-primary table table-hover table-bordered border-primary table-sm" style="text-align: center;">
+    <thead>
+      <tr>
+        <th scope="col">Book Name</th>
+        <th scope="col">Auhor Name</th>
+        <th scope="col">Publisher Name</th>
+        <th scope="col">Book Price</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for Kitab in Kitab %}
+      <tr class="table-hover table-b
+            ordered border-primary table-sm">
+        <td>{{Kitab[0]}}</td>
+        <td>{{Kitab[3]}}</td>
+        <td>{{Kitab[4]}}</td>
+        <td>{{Kitab[5]}}</td>
+        <td>
+          <button type="button" type="button" class="btn btn-success">
+            <i class="material-icons" value={{Kitab[0]}}> Issue</i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+    {%endfor%}
+  </table>
+</div>
+{% endblock contentC %}

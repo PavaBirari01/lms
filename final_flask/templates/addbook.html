@@ -1,0 +1,71 @@
+{% extends 'layouts.html' %} {% block contentA %}
+<div class="container w-50">
+  <form method="POST" action="">
+    {{form.hidden_tag()}}
+    <fieldset>
+      <legend class="border-bottom mb-4">Add new Book</legend>
+      <div class="form-group">
+        {{form.booktitle.label(class="form-control-label")}} {%if
+        form.booktitle.error%} {{form.booktitle(class="form-control
+        form-control-lg is-invalid")}} {%for error in form.booktitle.errors%}
+        <span>{{error}}</span>
+        {%endfor%} {%else%} {{form.booktitle(class="form-control
+        form-control-lg")}} {%endif%}
+      </div>
+
+      <div class="form-group">
+        {{form.bookNumber.label(class="form-control-label")}} {%if
+        form.bookNumber.error%} {{form.bookNumber(class="form-control
+        form-control-lg is-invalid")}} {%for error in form.bookNumber.errors%}
+        <span>{{error}}</span>
+        {%endfor%} {%else%} {{form.bookNumber(class="form-control
+        form-control-lg")}} {%endif%}
+      </div>
+      <div class="form-group">
+        {{form.subjectId.label(class="form-control-label")}} {%if
+        form.subjectId.error%} {{form.subjectId(class="form-control
+        form-control-lg is-invalid")}} {%for error in form.subjectId.errors%}
+        <span>{{error}}</span>
+        {%endfor%} {%else%} {{form.subjectId(class="form-control
+        form-control-lg")}} {%endif%}
+      </div>
+      <div class="form-group">
+        {{form.bookAuthor.label(class="form-control-label")}} {%if
+        form.bookAuthor.error%} {{form.bookAuthor(class="form-control
+        form-control-lg is-invalid")}} {%for error in form.bookAuthor.errors%}
+        <span>{{error}}</span>
+        {%endfor%} {%else%} {{form.bookAuthor(class="form-control
+        form-control-lg")}} {%endif%}
+      </div>
+      <div class="form-group">
+        {{form.PublisherName.label(class="form-control-label")}} {%if
+        form.PublisherName.error%} {{form.PublisherName(class="form-control
+        form-control-lg is-invalid")}} {%for error in
+        form.PublisherName.errors%}
+        <span>{{error}}</span>
+        {%endfor%} {%else%} {{form.PublisherName(class="form-control
+        form-control-lg")}} {%endif%}
+      </div>
+      <div class="form-group">
+        {{form.price.label(class="form-control-label")}} {%if form.price.error%}
+        {{form.price(class="form-control form-control-lg is-invalid")}} {%for
+        error in form.price.errors%}
+        <span>{{error}}</span>
+        {%endfor%} {%else%} {{form.price(class="form-control form-control-lg")}}
+        {%endif%}
+      </div>
+      <div class="form-group">
+        {{form.pages.label(class="form-control-label")}} {%if form.pages.error%}
+        {{form.pages(class="form-control form-control-lg is-invalid")}} {%for
+        error in form.pages.errors%}
+        <span>{{error}}</span>
+        {%endfor%} {%else%} {{form.pages(class="form-control form-control-lg")}}
+        {%endif%}
+      </div>
+    </fieldset>
+    <div class="form-group mt-5">
+      {{form.submit(class='btn btn-outline-success')}}
+    </div>
+  </form>
+</div>
+{% endblock contentA %}

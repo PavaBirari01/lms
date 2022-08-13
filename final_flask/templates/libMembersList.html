@@ -1,0 +1,52 @@
+{% extends 'layouts.html' %}
+{% block contentA %}
+<div class="container rounded mt-3 bg-white p-md-5 br">
+  <form method="post" action="">
+    <div class="row">
+      <div class="col-3">
+        <input type="text" class="form-control" placeholder="Member Name" name="Member" required />
+      </div>
+      <div class="col-3">
+        <button type="submit" class="btn btn-primary">Search Member</button>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock contentA %}
+{% block contentC%}
+<!-- <div class="container rounded mt-3 bg-white p-md-5 br"> -->
+<div class="table-responsive container">
+  <table class="table-primary table table-hover table-bordered border-primary table-sm" style="text-align: center;">
+    <thead>
+      <tr>
+        <!-- <th scope="col">Sr.No</th> -->
+        <th scope="col">Member Name</th>
+        <th scope="col">Member Email</th>
+        <th scope="col">Member Created Date</th>
+        <th scope="col">Action</th>
+        <!-- <th scope="col">Subject Code</th>
+          <th scope="col">Action</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      {% for Member in Member %}
+      <tr class="table-hover table-b
+            ordered border-primary table-sm">
+        <!-- <td>{{Member[0]}}</td> -->
+        <td>{{Member[1]}}</td>
+        <td>{{Member[2]}}</td>
+        <td>{{Member[4]}}</td>
+        <td>
+          <button type="button" type="button" class="btn btn-success">
+            <i class="material-icons" value={{Member[0]}}> Remove</i>
+          </button>
+        </td>
+      </tr>
+      <!-- -->
+    </tbody>
+    {%endfor%}
+  </table>
+</div>
+<!-- </div> -->
+
+{% endblock contentC %}

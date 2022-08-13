@@ -1,0 +1,73 @@
+{% extends 'layouts.html' %} 
+{% block contentA %}
+<!-- <div class="login-box">
+  <h2>Subject Books avilable in Library</h2>
+  <form method="post" action="">
+    <div class="user-box">
+      <input type="text" class="form-control" placeholder="Subject SubName" name="SubName" required />
+      <label>Subject Name</label>
+    </div>
+    <div class="user-box">
+      <input type="text" class="form-control" placeholder="Subject Code" name="SubCode" required />
+      <label>Subject Code</label>
+    </div>
+    <button class="a" type="submit">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Search Book
+    </button>
+  </form>
+</div> -->
+<div class="container rounded mt-3 bg-white p-md-5 br">
+<form method="post" action="">
+   <div class="row">
+     <div class="col-3">
+       <input type="text" class="form-control" placeholder="Subject Name" name="SubName" required/>
+     </div>
+   
+     <div class="col-3">
+       <input type="text" class="form-control" placeholder="Subject Code" name="SubCode" required />
+     </div>
+   
+     <div class="col-3">
+       <button type="submit" class="btn btn-primary">Search Book</button>
+     </div>
+   </div>
+   </form>
+   </div>
+{% endblock contentA %}
+{% block contentC%} 
+<!-- <div class="container rounded mt-3 bg-white p-md-5 br"> -->
+  <div class="table-responsive container">
+    <table class="table-primary table table-hover table-bordered border-primary table-sm" style="text-align: center;">
+      <thead>
+        <tr>
+          <!-- <th scope="col">Sr.No</th> -->
+          <th scope="col">Subject Name</th>
+          <th scope="col">Subject Code</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for Subject in Subject %}
+        <tr class="table-hover table-b
+            ordered border-primary table-sm">
+          <!-- <th scope="row">{{Subject[]}}</th> -->
+          <td>{{Subject[0]}}</td>
+          <td>{{Subject[1]}}</td>
+          <td>
+            <button type="button" type="button" class="btn btn-success">
+              <i class="material-icons" value={{Subject[0]}}> Issue</i>
+            </button>
+          </td>
+        </tr>
+        <!-- -->
+      </tbody>
+      {%endfor%}
+    </table>
+  </div>
+<!-- </div> -->
+
+{% endblock contentC %}
